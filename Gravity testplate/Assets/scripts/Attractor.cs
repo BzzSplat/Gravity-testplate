@@ -5,21 +5,21 @@ using UnityEngine;
 public class Attractor : MonoBehaviour
 {
     public const float G = 1f; //norm would be 667.4 but real is 6.674
-    public static List<Attractor> Attractors;
-    Rigidbody rb;
-    public GameObject manager;
-    GameManager manager2;
+    //public static List<Attractor> Attractors;
+    public Rigidbody rb;
+    //public GameObject manager;
+    //GameManager manager2;
 
-    void FixedUpdate()
+    /*void FixedUpdate()
     {
         foreach (Attractor attractor in Attractors) //for each item apply the force
         {
             if (attractor != this)
             Attract(attractor);
         }
-    }
+    }*/
 
-    void OnEnable()
+    /*void OnEnable()
     {
         if (Attractors == null)
             Attractors = new List<Attractor>();
@@ -29,7 +29,21 @@ public class Attractor : MonoBehaviour
     void OnDisable()
     {
         Attractors.Remove(this);
+    }*/
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!other.gameObject.CompareTag("Planet"))
+        {
+            return;
+        }
+
+        Attractor otherAttractor = other.gameObject.GetComponent<Attractor>();
+        if(otherAttractor)
+            Attract(otherAttractor);
+
     }
+
 
     void Attract(Attractor objToAttract)
     {
@@ -47,7 +61,7 @@ public class Attractor : MonoBehaviour
         rbToAttract.AddForce(force);   //apply the created force
 
 
-        //create force that at distance has gravity acts normal but at closer distances the objects are pushed away
+        //create new force type that at distance has gravity acts normal but at closer distances the objects are pushed away
     }
 
 }

@@ -25,6 +25,8 @@ public class ChangeDaWorld : MonoBehaviour
         if (this.name != "Universe Core")
             mattyD.material.mainTexture = cdw.textures[texInd];
     }
+
+
     public void randTexture()
     {
         Renderer mattyD;
@@ -34,6 +36,7 @@ public class ChangeDaWorld : MonoBehaviour
         if (this.name != "Universe Core")
             mattyD.material.mainTexture = cdw.textures[Random.Range(2, 6)];
     }
+
 
     public void UpdateSize(Rigidbody rb)
     {
