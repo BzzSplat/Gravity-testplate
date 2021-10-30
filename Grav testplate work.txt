@@ -1,0 +1,30 @@
+COMPLEXE PLANETS/MULTI-PIECE PLANETS:
+atmosphere (main collision, things outside an atmosphere experience no gravity)
+ground (semi sphere)
+possible grav sphere (optimization)
+ground objects (stuff on the planet(players, rocks, trees, ailens, ect))
+
+STARS:
+bigger planets with different glowing textures and light sources
+(low priority) also supernovae or supernovas idk
+
+PLAYER:
+some sort of player, just movement and camera is fine for now
+(low priority) tool/weapon holding and usage (hl2 weapon selection)
+(low priority) item spawn menu (gmod spawn menu but different?)
+(low priority) inventory system
+
+(low priority) BUILDING:
+placment of machines on planet ground
+pipes to connect machines (rope tool from gmod)
+materials (energy, metals, gasses, liquids, ect)
+machines that do stuff with items
+
+(low priority) SHIP BUILDING:
+machines such as grav generators, thrusters, chairs, weapons, FTL drive, ect
+no grid based building (bulding stuff like in gmod, maybe alignment tool)
+
+(low priority) ADVANCED PLANETS:
+planet temperatures, atmosphere pressure, and gravity based on size
+planets contain finite amount of materials in the atmosphere, ground, and maybe lakes
+planets change to different type depending on materials in them (more of certain materials means higher chance for specific planet type)
