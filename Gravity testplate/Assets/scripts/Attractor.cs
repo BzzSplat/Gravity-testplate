@@ -5,31 +5,12 @@ using UnityEngine;
 public class Attractor : MonoBehaviour
 {
     public const float G = 1f; //norm would be 667.4 but real is 6.674
-    //public static List<Attractor> Attractors;
     public Rigidbody rb;
-    //public GameObject manager;
-    //GameManager manager2;
 
-    /*void FixedUpdate()
+    private void Start()
     {
-        foreach (Attractor attractor in Attractors) //for each item apply the force
-        {
-            if (attractor != this)
-            Attract(attractor);
-        }
-    }*/
-
-    /*void OnEnable()
-    {
-        if (Attractors == null)
-            Attractors = new List<Attractor>();
-
-        Attractors.Add(this);
+        rb = this.GetComponentInParent<Rigidbody>();
     }
-    void OnDisable()
-    {
-        Attractors.Remove(this);
-    }*/
 
     private void OnTriggerStay(Collider other)
     {

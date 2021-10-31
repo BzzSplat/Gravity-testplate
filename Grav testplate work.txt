@@ -1,3 +1,5 @@
+get scripts to use parent rgidbody
+
 COMPLEXE PLANETS/MULTI-PIECE PLANETS:
 atmosphere (main collision, things outside an atmosphere experience no gravity)
 ground (semi sphere)

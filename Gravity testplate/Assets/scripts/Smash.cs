@@ -7,14 +7,13 @@ public class Smash : MonoBehaviour
     float mass;
     Rigidbody rb;
     ChangeDaWorld cdw;
-    //public GameObject planetPrefab;
     public GameObject manager;
     TicketMaster tickMast;
 
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = this.GetComponentInParent< Rigidbody>();
 
         if (gameObject.name != "Universe Core")//core of the universe has a fixed manually set size
             rb.mass = Random.Range(0.1f, 4.0f);
@@ -31,7 +30,7 @@ public class Smash : MonoBehaviour
         if (!otherObj.gameObject.CompareTag("Planet")) {
             return;
         }
-        if (otherObj.gameObject.name == "Universe Core" || this.gameObject.name == "Universe Core")//Universal core dosen't get deleted or bigger
+        if (otherObj.gameObject.transform.parent.name == "Universe Core" || this.gameObject.transform.parent.name == "Universe Core")//Universal core dosen't get deleted or bigger
         {
             return;
         }

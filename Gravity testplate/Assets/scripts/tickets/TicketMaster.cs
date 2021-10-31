@@ -12,7 +12,6 @@ public class TicketMaster : MonoBehaviour
         if (instance)
             Debug.Log("Another ticket master exists");
         instance = this;
-        //StartCoroutine("processTickets");
     }
 
     public void SendTicket(Ticket ticket)

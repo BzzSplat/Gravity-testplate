@@ -12,7 +12,6 @@ public class ChangeDaWorld : MonoBehaviour
     void Start()
     {
         cdw = manager.GetComponent<ChangeDaWorld>();
-        //textures = cdw.textures;
     }
         
 
@@ -22,7 +21,7 @@ public class ChangeDaWorld : MonoBehaviour
         Material matt;
         mattyD = this.GetComponent<Renderer>();
         matt = this.GetComponent<Material>();
-        if (this.name != "Universe Core")
+        if (this.transform.parent.name != "Universe Core")
             mattyD.material.mainTexture = cdw.textures[texInd];
     }
 
@@ -33,7 +32,7 @@ public class ChangeDaWorld : MonoBehaviour
         Material matt;
         mattyD = this.GetComponent<Renderer>();
         matt = this.GetComponent<Material>();
-        if (this.name != "Universe Core")
+        if (this.transform.parent.name != "Universe Core")
             mattyD.material.mainTexture = cdw.textures[Random.Range(2, 6)];
     }
 
