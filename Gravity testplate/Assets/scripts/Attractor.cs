@@ -19,17 +19,13 @@ public class Attractor : MonoBehaviour
             return;
         }
 
-        Attractor otherAttractor = other.gameObject.GetComponent<Attractor>();
-        if(otherAttractor)
-            Attract(otherAttractor);
+        Attract(other.transform.parent.GetComponent<Rigidbody>());
 
     }
 
 
-    void Attract(Attractor objToAttract)
+    void Attract(Rigidbody rbToAttract)
     {
-        Rigidbody rbToAttract = objToAttract.rb;  //store variable of other object to attract
-
         Vector3 direction = rb.position - rbToAttract.position; //get direction of other object
         float distance = direction.magnitude;
 

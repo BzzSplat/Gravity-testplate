@@ -294,7 +294,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173607385}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.28, y: 0.7584007, z: -4.119054}
+  m_LocalPosition: {x: -8.13, y: 0.7584007, z: -4.119054}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 863356739}
@@ -657,7 +657,6 @@ GameObject:
   - component: {fileID: 863356745}
   - component: {fileID: 863356744}
   - component: {fileID: 863356743}
-  - component: {fileID: 863356742}
   - component: {fileID: 863356741}
   - component: {fileID: 863356740}
   m_Layer: 0
@@ -708,19 +707,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 91203163}
---- !u!114 &863356742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863356738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 823f622735ca2674e940e0ae8083b483, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
 --- !u!135 &863356743
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -795,7 +781,6 @@ GameObject:
   - component: {fileID: 891380009}
   - component: {fileID: 891380008}
   - component: {fileID: 891380007}
-  - component: {fileID: 891380005}
   - component: {fileID: 891380004}
   - component: {fileID: 891380003}
   m_Layer: 0
@@ -813,7 +798,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891380001}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.26, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 146674501}
@@ -846,19 +831,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 91203163}
---- !u!114 &891380005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891380001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 823f622735ca2674e940e0ae8083b483, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
 --- !u!135 &891380007
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1014,6 +986,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1099315653}
   - component: {fileID: 1099315654}
+  - component: {fileID: 1099315655}
   m_Layer: 0
   m_Name: Gravity sphere
   m_TagString: Untagged
@@ -1048,6 +1021,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1099315655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099315652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 823f622735ca2674e940e0ae8083b483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
 --- !u!1 &1568359464
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,6 +1044,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1568359465}
   - component: {fileID: 1568359466}
+  - component: {fileID: 1568359467}
   m_Layer: 0
   m_Name: Gravity sphere
   m_TagString: Untagged
@@ -1092,3 +1079,16 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1568359467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568359464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 823f622735ca2674e940e0ae8083b483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}

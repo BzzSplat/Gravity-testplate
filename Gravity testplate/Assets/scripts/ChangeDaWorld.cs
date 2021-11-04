@@ -39,14 +39,17 @@ public class ChangeDaWorld : MonoBehaviour
 
     public void UpdateSize(Rigidbody rb)
     {
+        //gameObject
+
         if (rb.mass < 12)
         {
-            transform.localScale = new Vector3(rb.mass, rb.mass, rb.mass);
+            //transform.localScale = new Vector3(rb.mass, rb.mass, rb.mass);
+            this.transform.parent.localScale = new Vector3(rb.mass, rb.mass, rb.mass);
             changeTexture(2);
         }
         else
         {
-            transform.localScale = new Vector3(rb.mass / 10f, rb.mass / 10f, rb.mass / 10f);
+            this.transform.parent.localScale = new Vector3(rb.mass, rb.mass, rb.mass);
             changeTexture(1);
         }
     }
