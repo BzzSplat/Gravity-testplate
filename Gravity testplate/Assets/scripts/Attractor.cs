@@ -9,8 +9,9 @@ public class Attractor : MonoBehaviour
 
     private void Start()
     {
-        rb = this.GetComponentInParent<Rigidbody>();
+        rb = this.gameObject.GetComponentInParent<Rigidbody>();
     }
+
 
     private void OnTriggerStay(Collider other)
     {
@@ -19,7 +20,7 @@ public class Attractor : MonoBehaviour
             return;
         }
 
-        Attract(other.transform.parent.GetComponent<Rigidbody>());
+        Attract(other.GetComponentInParent<Rigidbody>());
 
     }
 
