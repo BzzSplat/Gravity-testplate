@@ -1,4 +1,8 @@
-get scripts to use parent rgidbody
+Have gamemanager script hold texture array, no need to have a bunch of empty arrays
+Fix ground collision
+Add player (create separate project and maybe try to add multiplayer too, for testing of course)
+Objects in atmospheres (example, make it so only gravity in atmosphere)
+
 
 COMPLEXE PLANETS/MULTI-PIECE PLANETS:
 atmosphere (main collision, things outside an atmosphere experience no gravity)
