@@ -10,6 +10,8 @@ public class Smash : MonoBehaviour
     public GameObject manager;
     TicketMaster tickMast;
 
+    public bool isStar = false;
+    public bool isBHole = false;
 
     void Start() //first segment makes the planet have a random size, third segment randomizes texture
     {
@@ -20,7 +22,11 @@ public class Smash : MonoBehaviour
         tickMast = manager.GetComponent<TicketMaster>();
 
         cdw.UpdateSize(rb, this.transform.parent);
-        cdw.changeTexture(Random.Range(2, 6), this.gameObject); //hopefull will change this to change biome rather than "atmosphere" texture, biomes will hold multiple textures for different planet pieces, props such as rocks and tress, and terrains such as caves and mounatins
+        cdw.changeTexture(Random.Range(2, 6), this.gameObject);
+        //hopefull will change this to change biome rather than "atmosphere" texture, biomes will hold multiple 
+        //textures for different planet pieces, props such as rocks and tress, and terrains such as caves and mounatins
+
+        GetComponentInParent<Light>().enabled = false;
     }
 
 

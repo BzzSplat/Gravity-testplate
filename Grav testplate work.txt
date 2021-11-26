@@ -1,7 +1,7 @@
-Have gamemanager script hold texture array, no need to have a bunch of empty arrays
-Fix ground collision
-Add player (create separate project and maybe try to add multiplayer too, for testing of course)
-Objects in atmospheres (example, make it so only gravity in atmosphere)
+Nova main: x * 2.5 (20 = 50)
+Nova extra: x * 2 (20 = 40)
+Supernovas when stars become blackholes, and possibly when stars collide (only need to add if stars together won't push eachother into blackholes)
+Star colors, the larger a star the more blue it is or just random color, could depend on temp AND size later
 
 
 COMPLEXE PLANETS/MULTI-PIECE PLANETS:
