@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{38FC72A9-7E5B-9378-98E4-C62B29C845FD}</ProjectGuid>
+    <ProjectGuid>{D4E6217E-1182-6ECB-FDE6-9B1B714943B6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -54,13 +54,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\scripts\GameManager.cs" />
+    <Compile Include="Assets\scripts\CameraPos.cs" />
     <Compile Include="Assets\scripts\Smash.cs" />
     <Compile Include="Assets\scripts\ChangeDaWorld.cs" />
     <Compile Include="Assets\scripts\tickets\TicketMaster.cs" />
     <Compile Include="Assets\scripts\Attractor.cs" />
     <Compile Include="Assets\scripts\tickets\Ticket.cs" />
-    <Compile Include="Assets\scripts\CameraPos.cs" />
     <Compile Include="Assets\scripts\Nova.cs" />
+    <Compile Include="Assets\scripts\Ui.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\BlendShader.shader" />

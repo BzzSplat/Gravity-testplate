@@ -22,7 +22,7 @@ public class Smash : MonoBehaviour
         tickMast = manager.GetComponent<TicketMaster>();
 
         cdw.UpdateSize(rb, this.transform.parent);
-        cdw.changeTexture(Random.Range(2, 6), this.gameObject);
+        cdw.changeTexture(Random.Range(3, 6), this.gameObject);
         //hopefull will change this to change biome rather than "atmosphere" texture, biomes will hold multiple 
         //textures for different planet pieces, props such as rocks and tress, and terrains such as caves and mounatins
 

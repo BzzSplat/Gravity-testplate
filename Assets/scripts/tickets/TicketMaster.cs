@@ -37,11 +37,18 @@ public class TicketMaster : MonoBehaviour
                     ticket.SourcePlanet.GetComponent<Rigidbody>().mass += ticket.OtherPlanet.GetComponent<Rigidbody>().mass; //add masses
                     ticket.SourcePlanet.GetComponent<Rigidbody>().velocity = (ticket.OtherPlanet.GetComponent<Rigidbody>().velocity + ticket.SourcePlanet.GetComponent<Rigidbody>().velocity) / ticket.SourcePlanet.GetComponent<Rigidbody>().mass; //add velocities then divide by mass
                     cdw.UpdateSize(ticket.SourcePlanet.GetComponent<Rigidbody>(), ticket.SourcePlanet.GetComponent<Transform>()); //update size
-                    Destroy(ticket.OtherPlanet);
+                    StartCoroutine("check", ticket.OtherPlanet);
                 }
             }
             ticketQueue.Dequeue();
         }
+    }
+
+    IEnumerator check(GameObject planet)
+    {
+        Destroy(planet);
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<GameManager>().checkPlanets();
     }
 
 }

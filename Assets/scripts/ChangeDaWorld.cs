@@ -36,7 +36,7 @@ public class ChangeDaWorld : MonoBehaviour
             planet.GetChild(0).GetComponent<Smash>().isStar = true;
 
             planet.gameObject.GetComponent<Light>().enabled = true;
-            planet.gameObject.GetComponent<Light>().range = planet.localScale.y * 5; //divide by 2 to gett correct size / times by 10 for desired reach
+            planet.gameObject.GetComponent<Light>().range = planet.localScale.y * 10; //divide by 2 to gett correct size / times by 10 for desired reach
         }
         else //if over any of the limits it becomes a blackhole
         {
@@ -48,8 +48,9 @@ public class ChangeDaWorld : MonoBehaviour
 
             if (planet.GetChild(0).GetComponent<Smash>().isStar)
             {
-                //GameObject nover = Instantiate(nova, planet.position, Quaternion.identity);
-
+                GameObject nover = Instantiate(nova, planet.position, Quaternion.identity);
+                nover.GetComponent<Nova>().sourcePlanet = planet.gameObject;
+                planet.GetChild(0).GetComponent<Smash>().isStar = false;
             }
         }
     }

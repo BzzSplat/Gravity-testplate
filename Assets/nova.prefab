@@ -4819,6 +4819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourcePlanet: {fileID: 0}
+  time: 8
   radius: 0
   power: 8000
 --- !u!1 &3474117619510752323
