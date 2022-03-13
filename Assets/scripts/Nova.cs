@@ -9,23 +9,19 @@ public class Nova : MonoBehaviour //maybe no explosion, it laggs hard
     public GameObject sourcePlanet;
     public float time;
 
-    public float radius;
-    public float power = 8000f;
+    public float radius = 300;
+    public float power = 120000f;
 
     void Start()
     {
-        if(sourcePlanet)
-            radius = sourcePlanet.transform.localScale.y * 10;
-
-        Vector3 explosionPos = transform.position;
-        Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
+        /*Collider[] colliders = Physics.OverlapSphere(transform.position, radius); //the overlap sphere can't detect triggers
         foreach (Collider hit in colliders)
         {
-            Rigidbody rb = hit.GetComponent<Rigidbody>();
+            Rigidbody rb = hit.GetComponentInParent<Rigidbody>();
 
             if (rb && rb.gameObject != sourcePlanet)
-                rb.AddExplosionForce(power, explosionPos, radius);
-        }
+                rb.AddExplosionForce(power, transform.position, radius);
+        }*/
 
         Destroy(this.gameObject, time);
     }

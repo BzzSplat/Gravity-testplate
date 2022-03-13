@@ -32,7 +32,7 @@ public class ChangeDaWorld : MonoBehaviour
         {
             planet.localScale = new Vector3(rb.mass, rb.mass, rb.mass);
             changeTexture(7, planet.GetChild(0).gameObject);
-            planet.GetChild(2).gameObject.active = false;
+            planet.GetChild(2).gameObject.SetActive(false);
             planet.GetChild(0).GetComponent<Smash>().isStar = true;
 
             planet.gameObject.GetComponent<Light>().enabled = true;
@@ -41,9 +41,10 @@ public class ChangeDaWorld : MonoBehaviour
         else //if over any of the limits it becomes a blackhole
         {
             planet.localScale = new Vector3(rb.mass/10, rb.mass/10, rb.mass/10);
+            planet.GetChild(1).GetComponent<SphereCollider>().radius *= 10;
             changeTexture(1, planet.GetChild(0).gameObject);
             planet.gameObject.GetComponent<Light>().enabled = false;
-            planet.GetChild(2).gameObject.active = false;
+            planet.GetChild(2).gameObject.SetActive(false);
             planet.GetChild(0).GetComponent<Smash>().isBHole = true;
 
             if (planet.GetChild(0).GetComponent<Smash>().isStar)

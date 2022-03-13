@@ -47,6 +47,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
@@ -56,35 +58,35 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1476}
+      Script: {instanceID: 1546}
     - Class: 114
-      Script: {instanceID: 1494}
+      Script: {instanceID: 1564}
     - Class: 114
-      Script: {instanceID: 1950}
+      Script: {instanceID: 2020}
     - Class: 114
-      Script: {instanceID: 2148}
+      Script: {instanceID: 2218}
     - Class: 114
-      Script: {instanceID: 2190}
+      Script: {instanceID: 2260}
     - Class: 114
-      Script: {instanceID: 2230}
+      Script: {instanceID: 2300}
     - Class: 114
-      Script: {instanceID: 2268}
+      Script: {instanceID: 2338}
     - Class: 114
-      Script: {instanceID: 2332}
+      Script: {instanceID: 2402}
     - Class: 114
-      Script: {instanceID: 2348}
+      Script: {instanceID: 2418}
     - Class: 114
-      Script: {instanceID: 2482}
+      Script: {instanceID: 2552}
     - Class: 114
-      Script: {instanceID: 2662}
+      Script: {instanceID: 2732}
     - Class: 114
-      Script: {instanceID: 2740}
+      Script: {instanceID: 2810}
     - Class: 114
-      Script: {instanceID: 2904}
+      Script: {instanceID: 2974}
     - Class: 114
-      Script: {instanceID: 2942}
+      Script: {instanceID: 3012}
     - Class: 114
-      Script: {instanceID: 4020}
+      Script: {instanceID: 4090}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -122,7 +124,7 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
-      Hash: 9a42677b5bf93c62890e8f80953bb38f
+      Hash: 16870e676aee9dff92ede983b76c4dcc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -579,4 +581,5 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/Users/creep/Gravity Testplate Demo/Gravity testplate.exe
+  playerPath: C:/Users/Kimo Gidwani/unity projects/Gravity_Testplate_Build/Gravity
+    testplate.exe

@@ -34,9 +34,10 @@ public class TicketMaster : MonoBehaviour
 
                 if (ticket.SourcePlanet.GetComponent<Rigidbody>().mass > ticket.OtherPlanet.GetComponent<Rigidbody>().mass)
                 {
-                    ticket.SourcePlanet.GetComponent<Rigidbody>().mass += ticket.OtherPlanet.GetComponent<Rigidbody>().mass; //add masses
-                    ticket.SourcePlanet.GetComponent<Rigidbody>().velocity = (ticket.OtherPlanet.GetComponent<Rigidbody>().velocity + ticket.SourcePlanet.GetComponent<Rigidbody>().velocity) / ticket.SourcePlanet.GetComponent<Rigidbody>().mass; //add velocities then divide by mass
-                    cdw.UpdateSize(ticket.SourcePlanet.GetComponent<Rigidbody>(), ticket.SourcePlanet.GetComponent<Transform>()); //update size
+                    Rigidbody rb = ticket.SourcePlanet.GetComponent<Rigidbody>(), rbOther = ticket.OtherPlanet.GetComponent<Rigidbody>();
+                    rb.mass += rbOther.mass; //add masses
+                    rb.velocity = (rb.velocity + rbOther.velocity) / rb.mass; //add velocities then divide by mass
+                    cdw.UpdateSize(rb, ticket.SourcePlanet.GetComponent<Transform>()); //update size
                     StartCoroutine("check", ticket.OtherPlanet);
                 }
             }
