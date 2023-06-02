@@ -5,13 +5,22 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour //just try remakeing the planet system in the other game, will work out better
 {
+    [Header("Universe")]
     public List<GameObject> Planets;
-    public Material[] textures;
     public GameObject planetPrefab, restartBoom;
     public long uniSiz; //The size of the universe, basically where planets spawn and where to start pushing things back towards the center
     public int planetCount;
-    public Text FPS, PC;
     public float randMov;
+
+    [Header("Misc")]
+    public Material[] textures;
+    public Text FPS, PC;
+    [SerializeField]
+    Color withStars, noStars;
+    [SerializeField]
+    bool checkAvgSpeed;
+    [SerializeField]
+    float averageSpeed, spChk, plSpd;
 
     /*void Start() //demo does not start immediatly
     {
@@ -37,7 +46,7 @@ public class GameManager : MonoBehaviour //just try remakeing the planet system 
             newPlanet.transform.GetChild(0).GetComponent<Smash>().manager = this.gameObject;
             newPlanet.GetComponent<ChangeDaWorld>().manager = this.gameObject;
             Planets.Add(newPlanet);
-            newPlanet.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-randMov, randMov), Random.Range(-randMov, randMov), Random.Range(-randMov, randMov)) );
+            newPlanet.GetComponent<Rigidbody>().velocity = new Vector3(Random.Range(-randMov, randMov), Random.Range(-randMov, randMov), Random.Range(-randMov, randMov));
         }
 
         GetComponent<BoxCollider>().size = new Vector3(uniSiz*2, uniSiz*2, uniSiz*2);
@@ -55,27 +64,48 @@ public class GameManager : MonoBehaviour //just try remakeing the planet system 
 
         if (Input.GetKeyDown(KeyCode.J))
             StartCoroutine("bigBang");
+
+        if(checkAvgSpeed)
+        {
+            spChk = 0;
+            foreach(GameObject p in Planets)
+            {
+                if (p)
+                    spChk += p.GetComponent<Rigidbody>().velocity.magnitude;
+
+            }
+            averageSpeed = spChk / Planets.Count;
+            try
+            {
+                plSpd = Planets[Random.Range(0, Planets.Count)].GetComponent<Rigidbody>().velocity.magnitude;
+            }
+            catch { }
+        }
     }
 
     public void checkPlanets()
     {
         bool starsExist = false;
 
-        for(int i = Planets.Count - 1; i > -1; i--)
+        try
         {
-            if (!Planets[i])
+            for (int i = Planets.Count - 1; i > -1; i--)
             {
-                Planets.RemoveAt(i);
-            }
+                if (!Planets[i])
+                {
+                    Planets.RemoveAt(i);
+                }
 
-            if (Planets[i] && Planets[i].GetComponent<Rigidbody>().mass >= 15 && Planets[i].GetComponent<Rigidbody>().mass < 30)
-                starsExist = true;
+                if (Planets[i] && Planets[i].GetComponent<Rigidbody>().mass >= 15 && Planets[i].GetComponent<Rigidbody>().mass < 30)
+                    starsExist = true;
+            }
         }
+        catch { }
 
         if (starsExist) //give some ambient lighting when there are no stars
-            RenderSettings.ambientLight = new Color(0, 0, 0);
+            RenderSettings.ambientLight = withStars;
         else
-            RenderSettings.ambientLight = new Color(0.1960f, 0.1960f, 0.1960f);
+            RenderSettings.ambientLight = noStars;
 
         if (Planets.Count <= 1)
             StartCoroutine("bigBang");

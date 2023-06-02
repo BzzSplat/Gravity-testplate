@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChangeDaWorld : MonoBehaviour
 {
     public GameObject manager;
+    [SerializeField]
     GameManager manScript;
     public GameObject nova;
 
@@ -16,7 +17,11 @@ public class ChangeDaWorld : MonoBehaviour
 
     public void changeTexture(int texInd, GameObject objectToChange)// 1 is blackhole, 2 is volcanic
     {
-        objectToChange.GetComponent<Renderer>().material = manScript.textures[texInd];
+        try
+        {
+            objectToChange.GetComponent<Renderer>().material = manScript.textures[texInd];
+        }
+        catch { }
     }
 
     public void UpdateSize(Rigidbody rb, Transform planet)

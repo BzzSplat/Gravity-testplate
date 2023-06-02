@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_AmbientSkyColor: {r: 0.11764706, g: 0.11764706, b: 0.11764706, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 105, y: -20}
+  m_AnchoredPosition: {x: 105, y: -25}
   m_SizeDelta: {x: 200, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &81059588
@@ -314,6 +314,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Planets: []
+  planetPrefab: {fileID: 5137390618249746642, guid: c0400fa2eede4004eacdd0a6c497f6ab, type: 3}
+  restartBoom: {fileID: 2744155448153560765, guid: e434dd5dfb676ee46afa4cdc3fc45c3e, type: 3}
+  uniSiz: 400
+  planetCount: 1500
+  randMov: 5
   textures:
   - {fileID: 2100000, guid: ec1da0789a9eb854ebd72d1ecd0e69a9, type: 2}
   - {fileID: 2100000, guid: fc2f3a0c668a9af49aba89c76a635663, type: 2}
@@ -323,13 +328,14 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 1a94fd01066cab34ca6c1c6f5678dfd5, type: 2}
   - {fileID: 2100000, guid: 9fc7e3b640551724f8731f9a9f4ec127, type: 2}
   - {fileID: 2100000, guid: f55790a21c1d6c44095606f8e9123d21, type: 2}
-  planetPrefab: {fileID: 5137390618249746642, guid: c0400fa2eede4004eacdd0a6c497f6ab, type: 3}
-  restartBoom: {fileID: 2744155448153560765, guid: e434dd5dfb676ee46afa4cdc3fc45c3e, type: 3}
-  uniSiz: 100
-  planetCount: 380
   FPS: {fileID: 81059588}
   PC: {fileID: 747851633}
-  randMov: 50
+  withStars: {r: 0, g: 0, b: 0, a: 0}
+  noStars: {r: 0.11764706, g: 0.11764706, b: 0.11764706, a: 0}
+  checkAvgSpeed: 0
+  averageSpeed: 0
+  spChk: 0
+  plSpd: 0
 --- !u!4 &91203165
 Transform:
   m_ObjectHideFlags: 0
@@ -370,6 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 91203163}
+  manScript: {fileID: 0}
   nova: {fileID: 3474117618856180561, guid: 461c64916ffa4f645a133ce53333c3f8, type: 3}
 --- !u!65 &91203168
 BoxCollider:
@@ -420,7 +427,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 176, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &105370323
@@ -791,7 +798,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -120, y: 260}
+  m_AnchoredPosition: {x: -192, y: 243}
   m_SizeDelta: {x: 700, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &739580431
@@ -946,7 +953,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 105, y: -45}
+  m_AnchoredPosition: {x: 105, y: -70}
   m_SizeDelta: {x: 200, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &747851633
@@ -1124,7 +1131,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -210, y: -130}
+  m_AnchoredPosition: {x: -284, y: -105}
   m_SizeDelta: {x: 420, y: 310}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1041513594
@@ -1261,7 +1268,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -120, y: 300}
+  m_AnchoredPosition: {x: -192, y: 283}
   m_SizeDelta: {x: 700, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1958281528

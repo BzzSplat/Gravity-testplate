@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 5137390618249746640}
   - component: {fileID: 5137390618249746641}
   - component: {fileID: 7531938075501650089}
+  - component: {fileID: -7876291431429088136}
   m_Layer: 0
   m_Name: Planet parent
   m_TagString: Untagged
@@ -272,6 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
+  manScript: {fileID: 0}
   nova: {fileID: 3474117618856180561, guid: 461c64916ffa4f645a133ce53333c3f8, type: 3}
 --- !u!108 &7531938075501650089
 Light:
@@ -335,6 +337,22 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &-7876291431429088136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5137390618249746642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42f863ba60f816448ce33abbae10aec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 5137390618249746640}
+  speedThreshold: 50
+  speedLimit: 100
+  dragMax: 1
 --- !u!1 &5137390618674690114
 GameObject:
   m_ObjectHideFlags: 0

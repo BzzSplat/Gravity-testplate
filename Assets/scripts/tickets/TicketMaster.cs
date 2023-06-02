@@ -6,6 +6,7 @@ public class TicketMaster : MonoBehaviour
 {
     public TicketMaster instance;
     Queue<Ticket> ticketQueue = new Queue<Ticket>();
+    public Queue<int> test = new Queue<int>();
     ChangeDaWorld cdw;
 
     private void Start()
@@ -20,26 +21,25 @@ public class TicketMaster : MonoBehaviour
     public void SendTicket(Ticket ticket)
     {
         ticketQueue.Enqueue(ticket); //add ticket to queue
-        //Debug.Log("Ticket created from " + ticket.SourcePlanet); //spam? extra tickets made, fine but might need fixing
+        //Debug.Log("Ticket created from " + ticket.SourcePlanet + "\n"+ticketQueue.Count); //spam? extra tickets made, fine but might need fixing
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (ticketQueue.Count > 0)
         {
             Ticket ticket = ticketQueue.Peek();
-            if (ticket.SourcePlanet && ticket.OtherPlanet)
+            if ((ticket.SourcePlanet && ticket.OtherPlanet) && (ticket.SourcePlanet.GetComponent<Rigidbody>().mass >= ticket.OtherPlanet.GetComponent<Rigidbody>().mass))
             {
                 //Debug.Log("Kaboom? " + ticket.SourcePlanet);
 
-                if (ticket.SourcePlanet.GetComponent<Rigidbody>().mass > ticket.OtherPlanet.GetComponent<Rigidbody>().mass)
-                {
-                    Rigidbody rb = ticket.SourcePlanet.GetComponent<Rigidbody>(), rbOther = ticket.OtherPlanet.GetComponent<Rigidbody>();
-                    rb.mass += rbOther.mass; //add masses
-                    rb.velocity = (rb.velocity + rbOther.velocity) / rb.mass; //add velocities then divide by mass
-                    cdw.UpdateSize(rb, ticket.SourcePlanet.GetComponent<Transform>()); //update size
-                    StartCoroutine("check", ticket.OtherPlanet);
-                }
+                Rigidbody rb = ticket.SourcePlanet.GetComponent<Rigidbody>(), rbOther = ticket.OtherPlanet.GetComponent<Rigidbody>();
+                rb.mass += rbOther.mass; //add masses
+                rb.velocity = (rb.mass * rb.velocity + rbOther.mass * rbOther.velocity) / (rb.mass + rbOther.mass); //(m1v1 + m2v2)/m1 + m2
+                cdw.UpdateSize(rb, ticket.SourcePlanet.GetComponent<Transform>()); //update size
+
+                Destroy(ticket.OtherPlanet);
+                GetComponent<GameManager>().checkPlanets();
             }
             ticketQueue.Dequeue();
         }

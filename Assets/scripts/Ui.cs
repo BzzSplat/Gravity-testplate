@@ -45,8 +45,8 @@ public class Ui : MonoBehaviour
     public void startUniverse()
     {
         manager.ButtonStart();
-        this.transform.GetChild(0).gameObject.active = false;
-        this.transform.GetChild(1).gameObject.active = true;
-        this.transform.GetChild(2).gameObject.active = true;
+        this.transform.GetChild(0).gameObject.SetActive(false);
+        this.transform.GetChild(1).gameObject.SetActive(true);
+        this.transform.GetChild(2).gameObject.SetActive(true);
     }
 }
